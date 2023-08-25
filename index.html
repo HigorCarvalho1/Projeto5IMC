@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" defer></script>
+    <script src="./script.js" defer type="module"></script><!--quando utilizar o script dentro do head sempre utilizar o "defer "  isso indica para o navegador ler a instrução mas aplica-la  só no final -->
+    
+    <title>Calculando IMC</title>
+</head>
+<body>
+    <div class="header">
+        <div class="linha2 hide1">
+            <p>Digite somente números</p>
+        </div>
+        <div class="linha ">
+            <p>Preencha as Informações Necessarias</p>
+        </div>
+        
+    </div>
+    
+    <main class="conteudo">
+        <div class="conteudo2 ">
+            <div class="caixa">
+                <h1>Cálculo de IMC</h1>
+                <form >
+                    
+                    <label for="inpPeso">Peso (Kg)</label><!--Sempre deixar o "for" do label com o "id" do input-->
+                    <input id="inpPeso" type="number"
+                    placeholder="Coloque seu Peso     Ex: 80"
+                    placeholderTextColor="black"
+                    maxlength="3"
+                    inputmode="decimal">
+
+                    <label for="inpAlt">Altura (cm)</label><!--Sempre deixar o "for" do label com o "id" do input-->
+                    <input id="inpAlt" type="text"
+                    placeholder="Coloque sua Altura   Ex: 1.70"
+                    maxlength="4"
+                    inputmode="decimal"
+                    data-mask="0.000"
+                    >
+                    <button class="button">Calcular IMC <img src="./image/arrow-up-right.svg" alt="image de uma flecha"></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="resultado hide1">
+            <img id="reset" src="./image/close.svg" alt="imagem de X">
+            <h1>Seu IMC é de 28</h1>
+        </div>
+    </main>
+    
+
+</body>
+</html>

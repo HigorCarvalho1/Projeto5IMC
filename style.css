@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    background: #33CCCC; /* Fallback */
+    animation: color 9s infinite linear;
+    
+}
+main, form, label ,input,button,.resultado, .linha , .caixa{
+    font-family: 'Roboto', sans-serif;
+}
+.hide1{
+  display: none;  
+}
+.linha.open{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+main{
+    
+    height: 90vh;
+    
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa{
+    background: white;
+    border-radius: .6rem;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.caixa h1{
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 4.0rem;
+    color: #0C3440;
+    margin-bottom: 3.2rem;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.caixa label{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color:#00453A ;
+    margin-bottom: .8rem;
+}
+.caixa input{
+    width: 30.0rem;
+    padding: 1.6rem;
+    border-radius: .4rem;
+    border: 1px solid #02799D;
+    background: #DCE2E9;
+    margin-bottom: 1.6rem;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #212529;
+
+    
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+.caixa button{
+    border: none;
+    height: 5.2rem;
+    width: 30.0rem;
+    background:#02799D ;
+    padding: 1.6rem;
+    border-radius: .4rem;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+  
+}
+.caixa button:hover{
+    background: #02617e;
+    transform: scale(1.05) ;
+}
+
+.caixa button img{
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: .8rem;
+}
+.linha, .linha2{
+    width: 100%;
+    text-align: center;
+    padding: .8rem;
+    height: 3.6rem;
+    
+    color: white;
+    background: #F03E3E;
+
+    font-size: 2.0rem;
+    font-weight: 700;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform 1.0s;
+}
+.header{
+    position: static;
+}
+
+.resultado{
+    position: absolute;
+    background: white;
+    border-radius: .6rem;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+    
+    color: #0C3440;
+    font-size: 2.0rem;
+    font-weight: 700;
+    border: 1px solid black;
+    
+}
+.resultado h1{
+    margin:  3.2rem 6.4rem 6.4rem 6.4rem;
+}
+.resultado img{
+    margin-left: 90%;
+    margin-top: 1.6rem;
+    cursor: pointer;
+    
+}
+.resultado img:hover{
+    transform: scale(1.4) ;
+    
+}
+.hide{
+    opacity: 0.1;
+}
+@keyframes move{
+    
+    0%{
+        
+        transform: translateY(var(--startY)) scale(0.2)  ;
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
+label, input, button, .resultado{
+    --startY: 150%;
+    animation: move 1s;
+}
+@keyframes moves{
+    
+    0%{
+        
+        transform: translateY(var(--startY))   ;
+    }
+    100%{
+        
+    }    
+}
+
+.linha,.linha2{
+    --startY: -100%;
+    animation: moves 1.5s;
+}
+@keyframes color {
+    0%   { background: #17356a; }
+    20%  { background: #180c34; }
+    40%  { background: #3d38d9; }
+    60%  { background: #64ee52; }
+    80%  { background: #10e014; }
+    100% { background: #17356a; }
+  }
+
+
+@media ((max-width: 900px)){
+    body{
+        height: max(80.0rem, 100%);
+    }
+    .caixa{
+        margin-left: .5rem;
+        width: 85%;    
+        margin: auto;
+        margin-top: -5.0rem;
+    }
+    
+    .resultado h1{
+        font-size: 2.5rem;
+    }
+    
+    
+    
+}
